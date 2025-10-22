@@ -8,15 +8,13 @@
  */
 int main(void)
 {
-    int singleDigit = 0;
+	int singleDigit = 0;
 
-    while (singleDigit < 10)
-    {
-        putchar(singleDigit + '0'); 
-        singleDigit++;
-    }
-
-    putchar('\n');
-
-    return (0);
+	while (singleDigit < 10)
+	{
+		putchar(singleDigit + '0');
+		singleDigit++;
+	}
+	putchar('\n');
+	return (0);
 }
