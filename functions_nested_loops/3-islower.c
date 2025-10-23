@@ -1,21 +1,19 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main - test the _islower function
+ * _islower - Vérifie si un caractère est une lettre minuscule
+ * @c: Le caractère à vérifier
  *
- * Return: Always 0
+ * Return: 1 si c est une lettre minuscule, 0 sinon
  */
-int main(void)
+int _islower(int c)
 {
-    char c;
-
-    for (c = 'A'; c <= 'z'; c++)
-    {
-        if (_islower(c))
-            printf("%c is lowercase\n", c);
-        else
-            printf("%c is not lowercase\n", c);
-    }
-    return (0);
+	if (c >= 'a' && c <= 'z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
