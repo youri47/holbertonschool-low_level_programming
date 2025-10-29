@@ -1,14 +1,13 @@
-#include <stdio.h>
+#include "main.h"
 
-/* Fonction directement avant main */
+/**
+ * mul - multiplies two integers
+ * @a: first integer
+ * @b: second integer
+ *
+ * Return: result of multiplication
+ */
 int mul(int a, int b)
 {
-    return (a * b);
-}
-
-int main(void)
-{
-    printf("%d\n", mul(98, 1024));
-    printf("%d\n", mul(402, 1024));
-    return (0);
+	return (a * b);
 }
