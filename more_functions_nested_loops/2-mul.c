@@ -1,22 +1,14 @@
 #include <stdio.h>
 
-/**
- * mul - Fonction qui multiplie deux entiers
- * @a: premier entier
- * @b: deuxième entier
- *
- * Retourne: le produit de a et b
- */
+/* Fonction directement avant main */
 int mul(int a, int b)
 {
-    return a * b;
+    return (a * b);
 }
 
-// Exemple d’utilisation :
 int main(void)
 {
-    int resultat = mul(6, 7);
-    printf("Le résultat est : %d\n", resultat);
-    return 0;
+    printf("%d\n", mul(98, 1024));
+    printf("%d\n", mul(402, 1024));
+    return (0);
 }
-
