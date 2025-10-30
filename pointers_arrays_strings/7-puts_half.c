@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * puts_half - affiche la deuxième moitié d'une chaîne
@@ -30,10 +30,6 @@ void puts_half(char *str)
 	}
 
 	/* Afficher depuis la position de départ jusqu'à la fin */
-	while (str[start] != '\0')
-	{
-		putchar(str[start]);
-		start++;
-	}
-	putchar('\n');
+	write(1, &str[start], length - start);
+	write(1, "\n", 1);
 }
