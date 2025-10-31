@@ -1,17 +1,22 @@
 #include <stdio.h>
-#include "main.h"
+
+char *string_toupper(char *);
 
 /**
- * main - teste la fonction rev_string
+ * main - Point d'entree du programme
  *
- * Return: Always 0.
+ * Description: Teste la fonction string_toupper
+ *
+ * Return: Toujours 0 (Succes)
  */
 int main(void)
 {
-	char s[10] = "My School";
+	char str[] = "Look up!\n";
+	char *ptr;
 
-	printf("%s\n", s);
-	rev_string(s);
-	printf("%s\n", s);
+	ptr = string_toupper(str);
+	printf("%s", ptr);
+	printf("%s", str);
+
 	return (0);
 }
