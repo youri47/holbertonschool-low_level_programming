@@ -1,18 +1,15 @@
 #include <stdio.h>
-#include "main.h"
 
-/**
- * main - teste la fonction reset_to_98
- *
- * Return: Always 0.
- */
+char *_strcat(char *dest, char *src);
+
 int main(void)
 {
-	int n;
+	char dest[50] = "Bonjour ";
+	char src[] = "le monde!";
 
-	n = 402;
-	printf("n=%d\n", n);
-	reset_to_98(&n);
-	printf("n=%d\n", n);
+	printf("Avant: %s\n", dest);
+	_strcat(dest, src);
+	printf("Après: %s\n", dest);
+
 	return (0);
 }
