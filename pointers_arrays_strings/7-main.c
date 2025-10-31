@@ -1,24 +1,22 @@
 #include <stdio.h>
 
-void puts_half(char *str);
+char *leet(char *);
 
 /**
- * main - teste la fonction puts_half
+ * main - Point d'entree du programme
  *
- * Return: Toujours 0.
+ * Description: Teste la fonction leet
+ *
+ * Return: Toujours 0 (Succes)
  */
 int main(void)
 {
-	char *str;
+	char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
+	char *ptr;
 
-	str = "0123456789";
-	puts_half(str);
-
-	str = "Hello World!";
-	puts_half(str);
-
-	str = "Betty Holberton";
-	puts_half(str);
+	ptr = leet(str);
+	printf("%s", ptr);
+	printf("%s", str);
 
 	return (0);
 }
