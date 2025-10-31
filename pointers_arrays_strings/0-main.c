@@ -2,6 +2,13 @@
 
 char *_strcat(char *dest, char *src);
 
+/**
+ * main - Point d'entree du programme
+ *
+ * Description: Teste la fonction _strcat
+ *
+ * Return: Toujours 0 (Succes)
+ */
 int main(void)
 {
 	char dest[50] = "Bonjour ";

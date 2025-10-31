@@ -1,5 +1,14 @@
-#include "main.h"
-#include <stdio.h>
+/**
+ * _strcat - Concatene deux chaines de caracteres
+ * @dest: La chaine de destination
+ * @src: La chaine source a ajouter
+ *
+ * Cette fonction ajoute la chaine src a la fin de la chaine dest,
+ * en ecrasant le caractere nul de fin de dest, puis ajoute un
+ * caractere nul de fin.
+ *
+ * Return: Un pointeur vers la chaine resultante dest
+ */
 char *_strcat(char *dest, char *src)
 {
 	int i = 0;
@@ -11,7 +20,7 @@ char *_strcat(char *dest, char *src)
 		i++;
 	}
 
-	/* Copier src à la fin de dest */
+	/* Copier src a la fin de dest */
 	while (src[j] != '\0')
 	{
 		dest[i] = src[j];
@@ -19,7 +28,7 @@ char *_strcat(char *dest, char *src)
 		j++;
 	}
 
-	/* Ajouter le caractère de fin */
+	/* Ajouter le caractere de fin */
 	dest[i] = '\0';
 
 	return (dest);
