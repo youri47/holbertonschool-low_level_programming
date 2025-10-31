@@ -1,15 +1,38 @@
-#include "main.h"
+#include <stdio.h>
+
+int _strcmp(char *s1, char *s2);
 
 /**
- * main - teste la fonction _puts
+ * main - Point d'entree du programme
  *
- * Return: Always 0.
+ * Description: Teste la fonction _strcmp avec differentes chaines
+ *
+ * Return: Toujours 0 (Succes)
  */
 int main(void)
 {
-	char *str;
+	int result;
 
-	str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-	_puts(str);
+	result = _strcmp("Hello", "Hello");
+	printf("Compare 'Hello' et 'Hello': %d\n", result);
+
+	result = _strcmp("Hello", "World");
+	printf("Compare 'Hello' et 'World': %d\n", result);
+
+	result = _strcmp("World", "Hello");
+	printf("Compare 'World' et 'Hello': %d\n", result);
+
+	result = _strcmp("Hello", "Hello!");
+	printf("Compare 'Hello' et 'Hello!': %d\n", result);
+
+	result = _strcmp("Hello!", "Hello");
+	printf("Compare 'Hello!' et 'Hello': %d\n", result);
+
+	result = _strcmp("", "Hello");
+	printf("Compare '' et 'Hello': %d\n", result);
+
+	result = _strcmp("Hello", "");
+	printf("Compare 'Hello' et '': %d\n", result);
+
 	return (0);
 }
