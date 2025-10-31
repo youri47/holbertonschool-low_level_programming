@@ -1,15 +1,22 @@
-#include "main.h"
+#include <stdio.h>
+
+char *cap_string(char *);
 
 /**
- * main - teste la fonction puts2
+ * main - Point d'entree du programme
  *
- * Return: Always 0.
+ * Description: Teste la fonction cap_string
+ *
+ * Return: Toujours 0 (Succes)
  */
 int main(void)
 {
-    char *str;
+	char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
+	char *ptr;
 
-    str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-    puts2(str);
-    return (0);
+	ptr = cap_string(str);
+	printf("%s", ptr);
+	printf("%s", str);
+
+	return (0);
 }
