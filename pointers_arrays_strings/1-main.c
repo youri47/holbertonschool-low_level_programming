@@ -1,19 +1,35 @@
 #include <stdio.h>
-#include "main.h"
+
+char *_strncat(char *dest, char *src, int n);
 
 /**
- * main - teste la fonction swap_int
+ * main - Point d'entree du programme
  *
- * Return: Always 0.
+ * Description: Teste la fonction _strncat avec differentes valeurs de n
+ *
+ * Return: Toujours 0 (Succes)
  */
 int main(void)
 {
-	int a;
-	int b;
-	a = 98;
-	b = 42;
-	printf("a=%d, b=%d\n", a, b);
-	swap_int(&a, &b);
-	printf("a=%d, b=%d\n", a, b);
+	char dest1[50] = "Bonjour ";
+	char dest2[50] = "Bonjour ";
+	char dest3[50] = "Bonjour ";
+	char src[] = "le monde!";
+
+	printf("Test 1 - n=3:\n");
+	printf("Avant: %s\n", dest1);
+	_strncat(dest1, src, 3);
+	printf("Apres: %s\n\n", dest1);
+
+	printf("Test 2 - n=9:\n");
+	printf("Avant: %s\n", dest2);
+	_strncat(dest2, src, 9);
+	printf("Apres: %s\n\n", dest2);
+
+	printf("Test 3 - n=0:\n");
+	printf("Avant: %s\n", dest3);
+	_strncat(dest3, src, 0);
+	printf("Apres: %s\n", dest3);
+
 	return (0);
 }
