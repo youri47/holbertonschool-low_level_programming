@@ -2,19 +2,19 @@
 
 /**
  * puts2 - affiche un caractère sur deux d'une chaîne
- * @str: pointeur vers la chaîne
+ * @str: chaîne de caractères à parcourir
  *
- * Return: void
+ * Return: rien
  */
 void puts2(char *str)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
-		i += 2;
+		if (i % 2 == 0)
+			_putchar(str[i]);
+		i++;
 	}
 	_putchar('\n');
 }
