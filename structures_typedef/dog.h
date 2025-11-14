@@ -4,10 +4,9 @@
 /**
  * struct dog - Structure représentant un chien
  * @name: Nom du chien (chaîne de caractères)
- * @age: Age du chien (nombre a virgule flottante)
+ * @age: Âge du chien (nombre à virgule flottante)
  * @owner: Propriétaire du chien (chaîne de caractères)
  *
- * Description: Cette structure contient les informations de base d'un chien
  */
 struct dog
 {
@@ -16,7 +15,7 @@ struct dog
 	char *owner;
 };
 
-/* Prototypes des fonctions */
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 
 #endif
