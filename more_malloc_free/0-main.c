@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * main - teste la fonction malloc_checked
+ *
+ * Return: 0 en cas de succes
+ */
 int main(void)
 {
 	char *c;
