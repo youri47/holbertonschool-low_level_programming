@@ -2,5 +2,5 @@
 #define MAIN_H
 #include <stdlib.h>
 #include <stdio.h>
-void *_calloc(unsigned int nmemb, unsigned int size);
+int *array_range(int min, int max);
 #endif
