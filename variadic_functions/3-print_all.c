@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include "variadic_functions.h"
+
+/**
+ * print_char - Affiche un caractere
+ * @args: Liste d'arguments
+ */
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ * print_int - Affiche un entier
+ * @args: Liste d'arguments
+ */
+void print_int(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+
+/**
+ * print_float - Affiche un flottant
+ * @args: Liste d'arguments
+ */
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_string - Affiche une chaine
+ * @args: Liste d'arguments
+ */
+void print_string(va_list args)
+{
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", str);
+}
+
+/**
+ * print_all - Affiche n'importe quoi
+ * @format: Liste des types d'arguments
+ */
+void print_all(const char * const format, ...)
+{
+	int i = 0, j;
+	char *sep = "";
+	va_list args;
+	printer_t types[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
+
+	va_start(args, format);
+	while (format && format[i])
+	{
+		j = 0;
+		while (types[j].symbol)
+		{
+			if (format[i] == types[j].symbol[0])
+			{
+				printf("%s", sep);
+				types[j].func(args);
+				sep = ", ";
+			}
+			j++;
+		}
+		i++;
+	}
+	va_end(args);
+	printf("\n");
+}
