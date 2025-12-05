@@ -7,8 +7,8 @@
 
 /**
  * struct hash_node_s - Noeud d'une table de hachage
- * @key: La clé (string, unique dans la table)
- * @value: La valeur correspondant à la clé
+ * @key: La clé (string, nique dans la table)
+ * @value: La valeur correspondant a la clé
  * @next: Pointeur vers le prochain noeud (gestion des collisions)
  */
 typedef struct hash_node_s
@@ -31,5 +31,6 @@ typedef struct hash_table_s
 
 /* Prototypes */
 hash_table_t *hash_table_create(unsigned long int size);
+unsigned long int hash_djb2(const unsigned char *str);
 
 #endif /* HASH_TABLES_H */
