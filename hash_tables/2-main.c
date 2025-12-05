@@ -20,6 +20,11 @@ int main(void)
 	unsigned long int taille_table = 1024;
 	unsigned long int i;
 	unsigned long int index;
+	unsigned long int tailles[] = {10, 100, 1024, 10000};
+	char *test_cles[] = {
+		"a", "b", "c", "d", "e",
+		"f", "g", "h", "i", "j"
+	};
 
 	printf("=== Tests de la fonction key_index ===\n");
 	printf("Taille de la table: %lu\n\n", taille_table);
@@ -39,8 +44,6 @@ int main(void)
 	printf("=== Test avec différentes tailles ===\n");
 	printf("Clé: \"Holberton\"\n\n");
 
-	unsigned long int tailles[] = {10, 100, 1024, 10000};
-	
 	for (i = 0; i < 4; i++)
 	{
 		index = key_index((const unsigned char *)"Holberton", tailles[i]);
@@ -49,10 +52,6 @@ int main(void)
 
 	/* Test de distribution */
 	printf("\n=== Test de distribution (10 clés, table de taille 10) ===\n");
-	char *test_cles[] = {
-		"a", "b", "c", "d", "e",
-		"f", "g", "h", "i", "j"
-	};
 
 	for (i = 0; i < 10; i++)
 	{
