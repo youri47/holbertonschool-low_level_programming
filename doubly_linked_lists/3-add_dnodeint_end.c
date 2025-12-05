@@ -1,44 +1,39 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - ajoute un nouveau noeud à la fin d'une liste dlistint_t
- * @head: pointeur vers le pointeur de la tête de la liste
- * @n: valeur à stocker dans le nouveau noeud
+ * add_dnodeint_end - adds a new node at the end of a dlistint_t list
+ * @head: pointer to pointer to the head of the list
+ * @n: value to store in the new node
  *
- * Return: l'adresse du nouvel élément, ou NULL si échec
+ * Return: the address of the new element, or NULL if it failed
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-    dlistint_t *nouveau;
-    dlistint_t *dernier;
+	dlistint_t *new_node;
+	dlistint_t *last;
 
-    /* Allouer de la mémoire pour le nouveau noeud */
-    nouveau = malloc(sizeof(dlistint_t));
-    if (nouveau == NULL)
-        return (NULL);
+	new_node = malloc(sizeof(dlistint_t));
+	if (new_node == NULL)
+		return (NULL);
 
-    /* Initialiser le nouveau noeud */
-    nouveau->n = n;
-    nouveau->next = NULL;
+	new_node->n = n;
+	new_node->next = NULL;
 
-    /* Si la liste est vide, le nouveau noeud devient la tête */
-    if (*head == NULL)
-    {
-        nouveau->prev = NULL;
-        *head = nouveau;
-        return (nouveau);
-    }
+	if (*head == NULL)
+	{
+		new_node->prev = NULL;
+		*head = new_node;
+		return (new_node);
+	}
 
-    /* Parcourir la liste jusqu'au dernier noeud */
-    dernier = *head;
-    while (dernier->next != NULL)
-    {
-        dernier = dernier->next;
-    }
+	last = *head;
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
 
-    /* Lier le nouveau noeud à la fin */
-    dernier->next = nouveau;
-    nouveau->prev = dernier;
+	last->next = new_node;
+	new_node->prev = last;
 
-    return (nouveau);
+	return (new_node);
 }

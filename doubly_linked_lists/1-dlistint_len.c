@@ -1,24 +1,20 @@
 #include "lists.h"
 
 /**
- * dlistint_len - retourne le nombre d'éléments dans une liste dlistint_t
- * @h: pointeur vers la tête de la liste
+ * dlistint_len - returns the number of elements in a dlistint_t list
+ * @h: pointer to the head of the list
  *
- * Return: le nombre d'éléments dans la liste
+ * Return: the number of elements in the list
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-    size_t compteur = 0;
+	size_t count = 0;
 
-    /* Parcourir toute la liste */
-    while (h != NULL)
-    {
-        /* Passer au noeud suivant */
-        h = h->next;
-        
-        /* Incrémenter le compteur */
-        compteur++;
-    }
+	while (h != NULL)
+	{
+		h = h->next;
+		count++;
+	}
 
-    return (compteur);
+	return (count);
 }
