@@ -1,25 +1,22 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <string.h>
 
 /**
- * add_node - Ajoute un nouveau noeud au debut de la liste
- * @head: Double pointeur vers le premier noeud
- * @str: Chaine a stocker dans le nouveau noeud
+ * add_node - ajoute un nouveau noeud au début d'une liste list_t
+ * @head: adresse du pointeur vers le premier élément de la liste
+ * @str: chaîne à dupliquer pour le nouveau noeud
  *
- * Return: Adresse du nouveau noeud, ou NULL si echec
+ * Return: adresse du nouveau noeud, ou NULL en cas d'échec
  */
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node;
-
-	if (str == NULL)
-		return (NULL);
+	unsigned int len = 0;
 
 	new_node = malloc(sizeof(list_t));
 	if (new_node == NULL)
 		return (NULL);
 
+	/* duplique la string */
 	new_node->str = strdup(str);
 	if (new_node->str == NULL)
 	{
@@ -27,9 +24,13 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	new_node->len = strlen(str);
-	new_node->next = *head;
-	*head = new_node;
+	/* calcule la longueur */
+	while (str[len] != '\0')
+		len++;
+
+	new_node->len = len;
+	new_node->next = *head; /* l'ancien head devient le next */
+	*head = new_node;       /* le nouveau devient le head */
 
 	return (new_node);
 }
