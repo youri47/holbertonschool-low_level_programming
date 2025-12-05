@@ -1,19 +1,27 @@
 #include "lists.h"
 
 /**
- * print_dlistint - prints all the elements of a dlistint_t list
- * @h: pointer to the head of the list
- * Return: the number of nodes
+ * print_dlistint - affiche tous les éléments d'une liste dlistint_t
+ * @h: pointeur vers la tête de la liste
+ *
+ * Return: le nombre de noeuds
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t count = 0;
+    size_t compteur = 0;
 
-	while (h)
-	{
-		printf("%d\n", h->n);
-		count++;
-		h = h->next;
-	}
-	return (count);
+    /* Parcourir toute la liste */
+    while (h != NULL)
+    {
+        /* Afficher la valeur du noeud actuel */
+        printf("%d\n", h->n);
+        
+        /* Passer au noeud suivant */
+        h = h->next;
+        
+        /* Incrémenter le compteur */
+        compteur++;
+    }
+
+    return (compteur);
 }
